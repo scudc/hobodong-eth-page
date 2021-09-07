@@ -45,5 +45,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+      extend (config, { isDev, isClient }) {
+      if (!isDev) {
+        // relative links, please.
+        config.output.publicPath = './ipfs/QmZh6GejWJX4Cefg6Fix5n3HxqMPTwYkkZNj644G1jADdv/_nuxt/'
+      }
+      return config;
+    }
   }
 }
